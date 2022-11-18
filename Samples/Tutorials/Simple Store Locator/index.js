@@ -46,7 +46,7 @@ function initialize() {
     var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map));
 
     //Create an instance of the SearchURL client.
-    searchURL = new atlas.service.SearchURL(pipeline);
+    searchURL = new atlas.service.SearchURL(pipeline, atlas.getDomain());
 
     //If the user presses the search button, geocode the value they passed in.
     document.getElementById('searchBtn').onclick = performSearch;

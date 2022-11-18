@@ -70,7 +70,7 @@
                 var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map));
 
                 // Construct the SearchURL object
-                var searchURL = new atlas.service.SearchURL(pipeline);
+                var searchURL = new atlas.service.SearchURL(pipeline, atlas.getDomain());
 
                 var query = 'gasoline-station';
                 var radius = 9000;

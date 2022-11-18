@@ -104,7 +104,7 @@
                 var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map));
 
                 //Construct the RouteURL object
-                var routeURL = new atlas.service.RouteURL(pipeline);
+                var routeURL = new atlas.service.RouteURL(pipeline, atlas.getDomain());
 
                 //Start and end point input to the routeURL
                 var coordinates = [[startPoint.geometry.coordinates[0], startPoint.geometry.coordinates[1]], [endPoint.geometry.coordinates[0], endPoint.geometry.coordinates[1]]];

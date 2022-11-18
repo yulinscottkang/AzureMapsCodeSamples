@@ -49,10 +49,10 @@
             var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map));
 
             //Construct the RouteURL object
-            routeURL = new atlas.service.RouteURL(pipeline);
+            routeURL = new atlas.service.RouteURL(pipeline, atlas.getDomain());
 
             //Create an instance of the SearchURL client.
-            searchURL = new atlas.service.SearchURL(pipeline);
+            searchURL = new atlas.service.SearchURL(pipeline, atlas.getDomain());
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {
