@@ -45,8 +45,8 @@
                     }
 
                     //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-                    //authType: 'subscriptionKey',
-                    //subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
+                    ,authType: 'subscriptionKey',
+                    subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
                 }
             });
         }
@@ -75,13 +75,13 @@
                         var styles = document.createElement('link');
                         styles.setAttribute('type', 'text/css');
                         styles.setAttribute('rel', 'stylesheet');
-                        styles.setAttribute('href', 'https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css');
+                        styles.setAttribute('href', 'https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.css');
                         document.body.appendChild(styles);
 
                         //Load the Atlas JavaScript SDK.
                         var script = document.createElement('script');
                         script.setAttribute('type', 'text/javascript');
-                        script.setAttribute('src', 'https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js');
+                        script.setAttribute('src', 'https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.js');
 
                         //If the script loads successfully, trigger the callback.
                         if (callback) {

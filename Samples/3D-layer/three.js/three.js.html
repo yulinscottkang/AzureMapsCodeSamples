@@ -13,8 +13,8 @@
     <meta name="screenshot" content="screenshot.gif" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-    <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet" />
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+    <link href="https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.css" rel="stylesheet" />
+    <script src="https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.js"></script>
 
     <!-- Use three.js to render the 3D model. -->
     <script src="https://unpkg.com/three@latest/build/three.min.js"></script>
@@ -155,8 +155,8 @@
                     }
 
                     // Use an Azure Maps key. Get an Azure Maps key at https://azuremaps.com/. NOTE: The primary key should be used as the key.
-                    //authType: 'subscriptionKey',
-                    //subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
+                    ,authType: 'subscriptionKey',
+                    subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
                 }
             });
 

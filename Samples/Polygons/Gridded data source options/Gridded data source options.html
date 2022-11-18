@@ -12,8 +12,8 @@
     <meta name="screenshot" content="screenshot.jpg" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-    <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet" />
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+    <link href="https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.css" rel="stylesheet" />
+    <script src="https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/next/atlas.min.js"></script>
 
      <!-- Add reference to the gridded data source module. -->
     <script src="/lib/azure-maps-gridded-data-source.min.js"></script>
@@ -43,8 +43,8 @@
                     }
 
                     //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-                    //authType: 'subscriptionKey',
-                    //subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
+                    ,authType: 'subscriptionKey',
+                    subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
                 }
         });
 
