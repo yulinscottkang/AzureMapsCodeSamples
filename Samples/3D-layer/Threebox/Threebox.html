@@ -78,6 +78,12 @@
             updateStatus();
 
             let intMap = map.map;
+
+            // Override the map version for compatibility with Threebox.
+            Object.defineProperty(intMap, "version", {
+                get: function () { return "1.14"; },
+            });
+
             window.tb = new Threebox(
                 intMap,
                 intMap.getCanvas().getContext('webgl'),
