@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A collection of code samples for the Azure Maps Web Control."
+    />
+    <meta name="author" content="Microsoft Azure Maps" />
+
+    <title>Azure Maps Samples - Settings</title>
+
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script>
+
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array
+            var cookieArr = document.cookie.split(";");
+
+            // Loop through the array elements
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+
+                /* Removing whitespace at the beginning of the cookie name
+              and compare it with the given string */
+                if (name == cookiePair[0].trim()) {
+                    // Decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            // Return null if not found
+            return null;
+        }
+
+        function setCookie(name, value, daysToLive) {
+            // Encode value in order to escape semicolons, commas, and whitespace
+            var cookie = name + "=" + encodeURIComponent(value);
+
+            if (typeof daysToLive === "number") {
+                /* Sets the max-age attribute so that the cookie expires
+                      after the specified number of days */
+                cookie += "; max-age=" + daysToLive * 24 * 60 * 60;
+
+                document.cookie = cookie;
+            }
+        }
+
+        function onload() {
+            const subscriptionKey = getCookie('subscriptionKey');
+            const sdkVersion = getCookie('js')?.match(/\/(\d.*)\//)?.[1];
+
+            if (subscriptionKey) {
+                document.getElementById('subscriptionKeyInput').value = subscriptionKey;
+            }
+
+            if (sdkVersion) {
+                document.getElementById('sdkVersionInput').value = sdkVersion;
+            }
+        }
+
+        function update() {
+            const subscriptionKey = document.getElementById('subscriptionKeyInput').value;
+            const sdkVersion = document.getElementById('sdkVersionInput').value;
+
+            setCookie('subscriptionKey', subscriptionKey, 365);
+            setCookie('css', `https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/${sdkVersion}/atlas.min.css`, 365);
+            setCookie('js', `https://talbsmapcontrol.blob.core.windows.net/javascript/mapcontrol/${sdkVersion}/atlas.min.js`, 365);
+        
+            alert("Updated! Please reload the samples to see the changes.");
+        }
+
+    </script>
+  </head>
+  <body class="d-flex flex-column h-100" onload="onload()">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/" title="Azure Maps Samples">
+          <svg
+            width="20"
+            height="20"
+            class="me-2 mb-1"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32.2448 35.7947C23.525 42.5775 10.9868 40.9815 4.20483 32.2608C-2.57719 23.5401 -0.981434 11.0005 7.7383 4.21768C7.7953 4.16068 7.85228 4.10369 7.96627 4.04669C16.743 -2.6221 29.2812 -0.855162 35.9492 7.92256C42.5603 16.7003 40.9075 29.0689 32.2448 35.7947Z"
+              fill="url(#paint0_linear)"
+            />
+            <path
+              d="M23.183 5.35754L8.30811 29.0118L26.9444 21.773L23.183 5.35754Z"
+              fill="#9CEBFF"
+            />
+            <path
+              opacity="0.7"
+              d="M20.1626 10.1454L29.3953 32.5457L23.1832 5.35754L20.1626 10.1454Z"
+              fill="white"
+            />
+            <path
+              d="M19.6494 24.623L25.2346 22.457L29.395 32.6027L19.6494 24.623Z"
+              fill="#32BEDD"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear"
+                x1="20.1249"
+                y1="40.1385"
+                x2="20.1249"
+                y2="0.196089"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.0" stop-color="#198AB3" />
+                <stop offset="0.4417" stop-color="#28B7DB" />
+                <stop offset="0.7753" stop-color="#32D4F5" />
+              </linearGradient>
+            </defs>
+          </svg>
+          Azure Maps Samples
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://azuremaps.com"
+                title="About Azure Maps"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://docs.azuremaps.com"
+                title="Azure Maps Documentation"
+                >Docs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://demo.azuremaps.com"
+                title="Azure Maps Demo"
+                >Demo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://blog.azuremaps.com"
+                title="Azure Maps Blog"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://updates.azuremaps.com"
+                title="Azure Maps Updates"
+                >Updates</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0" style="margin-top: 56px">
+      <div id="cookie-banner"></div>
+    </div>
+
+    <main>
+      <section class="container py-4">
+        <div class="row">
+          <h1 class="fw-light">Settings</h1>
+          <p class="lead text-muted">
+            Choose your subscription key and WebSDK version.
+          </p>
+          <div>
+            <div>
+                <div style="margin-top: 20px">SubscriptionKey: 
+                    <select id="subscriptionKeyInput" class="form-select" aria-label="subscriptionKey">
+                        <option value="C5O1IevWN8bALJ-WVv9P_VVAawpIDDBJbd2KUdu5lic">C5O1IevWN8bALJ-WVv9P_VVAawpIDDBJbd2KUdu5lic (TomTom)</option>
+                        <option value="DCDoRS8v5HQ_nuZs81L-hqvYpzdDRPuyQFyQB1cpfKg" selected>DCDoRS8v5HQ_nuZs81L-hqvYpzdDRPuyQFyQB1cpfKg (Bing)</option>
+                    </select>
+                </div>
+                <div style="margin-top: 20px">WebSDK Version: 
+                    <select id="sdkVersionInput" class="form-select" aria-label="JS/CSS">
+                        <option value="3.0" selected>3.0</option>
+                        <option value="2.2">2.2</option>
+                        <option value="2.1">2.1</option>
+                        <option value="2.0">2.0</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          <div style="margin-top: 20px">
+            <button id="submit" onclick="update()" class="btn btn-info btn-lg px-4">Update settings</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
