@@ -30,7 +30,7 @@ module.exports = async function (context, req) {
     const cookies = parseCookie(req.headers.cookie) || {};
     let body = await response.text();
     
-    if (contentType === 'text/html' && body) {
+    if (contentType === 'text/html' && body && req.query.path !== 'settings.html') {
         if (cookies['subscriptionKey']) {
             body = body.replace(subscriptionKey, cookies['subscriptionKey']);
         }
