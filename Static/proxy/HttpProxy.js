@@ -20,7 +20,7 @@ module.exports = async function (context, req) {
     const host = process.env["STATIC_WEBSITE_URL"] || 'azuremaps.z13.web.core.windows.net';
     const url = `https://${host}/${req.query.path}`;
 
-    if ((/\.(gif|jpe?g|png|css|ico|bin|gltf|glb)$/i).test(url)) {
+    if ((/\.(gif|jpe?g|png|css|ico|bin|gltf|glb|zip|shp|prj|dbf|cpg)$/i).test(url)) {
         context.res.status(302).set('location', url).send();
         return;
     }
