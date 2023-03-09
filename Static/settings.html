@@ -178,6 +178,9 @@
                 >Updates</a
               >
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/settings.html" title="Settings" tabindex="100">Settings</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -215,6 +218,22 @@
           <div style="margin-top: 20px">
             <button id="submit" onclick="update()" class="btn btn-info btn-lg px-4">Update settings</button>
           </div>
+        </div>
+      </section>
+      <section class="container py-4">
+        <div>
+          <ul>
+            <li><p class="text-muted">WebSDK version <= 2.2.2 will always receive TomTom styles</p></li>
+            <li><p class="text-muted">WebSDK version >= 3.0.0 will always receive Bing styles</p></li>
+            <li>
+              <p class="text-muted">(Optional) To test against production endpoints or buddy builds, set the following cookies manually in the browser console.</p>
+              <p class="text-muted">
+                document.cookie = 'css=https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.4/atlas.min.css';<br/>
+                document.cookie = 'js=https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.4/atlas.min.js';<br/>
+                document.cookie = 'subscriptionKey=&lt;Your production subscriptionKey&gt;';<br/>
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
